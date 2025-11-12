@@ -29,7 +29,7 @@ sys.path.insert(0, grandparent_dir)
 core_path = os.path.join(grandparent_dir, 'core')
 sys.path.insert(0, core_path)
 
-from core.ssd_core_engine import (
+from ssd_engine.core.ssd_core_engine import (
     SSDCoreEngine, SSDCoreParams, SSDCoreState, 
     create_default_state, LeapType
 )

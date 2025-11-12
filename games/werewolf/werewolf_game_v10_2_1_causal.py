@@ -33,14 +33,14 @@ sys.path.insert(0, core_path)
 extensions_path = os.path.join(grandparent_dir, 'extensions')
 sys.path.insert(0, extensions_path)
 
-from extensions.ssd_memory_structure import (
+from ssd_engine.extensions.ssd_memory_structure import (
     StructuredMemoryStore,
     Concept,
     cosine_similarity
 )
 
 # SSDコアモジュールのインポート
-from core.ssd_human_module import HumanAgent, HumanLayer, HumanPressure
+from ssd_engine.core.ssd_human_module import HumanAgent, HumanLayer, HumanPressure
 
 
 class PlayerV10Causal:

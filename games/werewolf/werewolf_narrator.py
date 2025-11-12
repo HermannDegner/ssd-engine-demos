@@ -44,8 +44,8 @@ sys.path.insert(0, core_path)
 extensions_path = os.path.join(grandparent_dir, 'extensions')
 sys.path.insert(0, extensions_path)
 
-from extensions.ssd_memory_structure import Concept
-from core.ssd_human_module import HumanLayer
+from ssd_engine.extensions.ssd_memory_structure import Concept
+from ssd_engine.core.ssd_human_module import HumanLayer
 
 
 class NarrativeGenerator:

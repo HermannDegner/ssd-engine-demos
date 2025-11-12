@@ -47,7 +47,7 @@ sys.path.insert(0, parent_dir)
 core_path = os.path.join(parent_dir, 'core')
 sys.path.insert(0, core_path)
 
-from core.ssd_human_module import HumanAgent, HumanPressure, HumanLayer
+from ssd_engine.core import HumanAgent, HumanPressure, HumanLayer
 
 # ANSIカラーコード
 class Colors:

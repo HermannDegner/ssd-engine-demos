@@ -25,8 +25,8 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from core.ssd_human_module import HumanAgent, HumanPressure, HumanLayer, HumanParams
-from extensions.ssd_social_dynamics import (
+from ssd_engine.core.ssd_human_module import HumanAgent, HumanPressure, HumanLayer, HumanParams
+from ssd_engine.extensions.ssd_social_dynamics import (
     SocialCouplingParams, RelationshipMatrix, SocialDynamicsEngine
 )
 import numpy as np
