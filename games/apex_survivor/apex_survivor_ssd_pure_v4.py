@@ -31,9 +31,9 @@ import random
 import numpy as np
 
 # SSDフル統合インポート
-from core import HumanAgent, HumanParams, HumanPressure, HumanLayer
-from core import MultidimensionalPressureEngine, PressureDimension, StructuralLayer
-from core import create_pressure_engine_for_scenario
+from ssd_engine.core.ssd_human_module import HumanAgent, HumanParams, HumanPressure, HumanLayer
+from ssd_engine.core.ssd_pressure_system import MultidimensionalPressureEngine, PressureDimension, StructuralLayer
+from ssd_engine.core.ssd_pressure_system import create_pressure_engine_for_scenario
 
 
 # ===== ゲーム設定 =====

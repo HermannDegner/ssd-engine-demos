@@ -48,7 +48,7 @@ sys.path.insert(0, core_path)
 extensions_path = os.path.join(grandparent_dir, 'extensions')
 sys.path.insert(0, extensions_path)
 
-from ssd_memory_structure import Concept, cosine_similarity
+from ssd_engine.extensions.ssd_memory_structure import Concept, cosine_similarity
 
 
 class WerewolfVisualizer:
