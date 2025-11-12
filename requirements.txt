@@ -1,0 +1,4 @@
+# Requirements
+git+https://github.com/HermannDegner/ssd-engine.git#egg=ssd-engine[fast]
+matplotlib>=3.3.0
+numpy>=1.20.0
