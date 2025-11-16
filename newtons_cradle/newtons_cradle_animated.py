@@ -167,9 +167,7 @@ class Ball:
         E_acceleration = velocity_E / (velocity_kappa * 5.0 + 1.0)
         
         # 整合効率が高い = Ohm's lawで電流が流れやすい = 応答良好
-        efficiency_factor = 0.5 + eta_align * 0.5
-        
-        self.acceleration = base_acceleration * efficiency_factor * (1.0 + E_acceleration * 0.2)
+        self.acceleration = base_acceleration
         
         # 速度更新（ニュートンの第二法則）
         self.velocity += self.acceleration * dt
@@ -200,7 +198,8 @@ class Ball:
             # 跳躍 = 量子トンネル効果 / 臨界現象
             # べき乗則的な摂動（スケールフリー）
             leap_magnitude = 0.08 * (1.0 + np.random.power(2.0))
-            self.velocity *= (1.0 + np.random.randn() * leap_magnitude)
+            leap_dissipation_spike = 50.0 # 例：跳躍による熱発生量
+            self.state.E[3] += leap_dissipation_spike
             
             # 位置への量子的摂動
             self.position += np.random.randn() * 0.015 * string_length
@@ -382,7 +381,7 @@ class CradleVisualizer:
     def update_frame(self, frame):
         """フレーム更新"""
         # 複数ステップ実行（スムーズなアニメーション）
-        for _ in range(5):
+        for _ in range(20):
             self.cradle.step(dt=0.001)
         
         # 描画更新
@@ -498,7 +497,7 @@ class CradleVisualizer:
                         ha='center', va='top', fontsize=8,
                         bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
     
-    def animate(self, frames: int = 1000, interval: int = 20):
+    def animate(self, frames: int = 1000, interval: int = 1):
         """アニメーション開始"""
         print(f"\nアニメーション開始: {frames}フレーム")
         print("ウィンドウを閉じると終了します\n")
